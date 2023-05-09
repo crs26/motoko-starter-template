@@ -24,6 +24,7 @@ actor class Calculator() {
     };
     counter /= x;
     return ?counter;
+  // Step 5 - Implement div
   };
 
   public func reset () : async () {
