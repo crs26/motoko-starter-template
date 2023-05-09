@@ -7,8 +7,13 @@ import Type "Types";
 actor class Homework() {
   type Homework = Type.Homework;
 
+  var homeWorkDiary = Buffer.Buffer<Homework>(1);
+  stable var counter : Nat = 1;
+
   public shared func addHomework(homework : Homework) : async Nat {
-    return 9;
+    homeWorkDiary.add(homework);
+    counter += 1;
+    return counter;
   };
 
   public shared query func getHomework(id : Nat) : async Result.Result<Homework, Text> {
